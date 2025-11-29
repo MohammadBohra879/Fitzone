@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FitZone — Ujjain Gym Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+
+<header class="nav">
+  <div class="logo">FitZone</div>
+  <div class="nav-right">
+    <button class="ghost" id="btn-contact">Contact</button>
+    <button class="ghost" id="btn-login">Login</button>
+    <button class="ghost" id="btn-location">Near Me</button>
+    <button class="ghost" id="btn-rewards">Rewards</button>
+    <button id="btn-owner" class="ghost">Owner Panel</button>
+    <span class="toggle" id="modeToggle">🌞</span>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h2>Find Best Gyms in Ujjain</h2>
+    <input id="search" placeholder="Search gyms (Freeganj, Nanakheda, Tower...)" />
+    <div style="display:flex;gap:10px">
+      <button class="btn" id="btn-search">Search</button>
+      <button class="ghost" id="btn-clear">Clear</button>
+    </div>
+  </section>
+
+  <div style="margin:12px 0;padding:10px;border-radius:12px;background:var(--card);border:1px solid rgba(0,0,0,0.06);display:flex;justify-content:space-between;align-items:center;gap:10px">
+    <div id="api-box" class="meta">
+      Click "Get Fitness Tip" to load a motivational line from the API.
+    </div>
+    <button id="btn-tip" class="ghost">Get Fitness Tip</button>
+  </div>
+
+  <h2 style="margin-top:12px">Gyms in Ujjain</h2>
+  <div id="gyms-grid" class="grid"></div>
+
+    <!-- Owner/Admin Demo Panel (inspired from first version) -->
+  <!-- <section id="owner-panel" class="card" style="margin-top:18px;">
+    <div class="section-header">
+      <div>
+        <h2>Owner Panel (Demo)</h2>
+        <p class="meta">Manage members and holidays of FitZone gyms. This section is mainly to show advanced JavaScript features.</p>
+      </div>
+    </div>
+
+    <div id="owner-members-block" style="margin-top:10px;"></div>
+    <div id="owner-holidays-block" style="margin-top:18px;"></div>
+  </section> -->
+
+</main>
+
+<!-- Contact slide -->
+<div id="contact-page" class="page-slide">
+  <div class="page-inner">
+    <button class="close-x" id="contact-close">✕</button>
+    <h2>Contact Us</h2>
+    <p class="meta">We reply within 24 hours (demo).</p>
+    <label>Your name</label>
+    <input id="contact-name" class="input" placeholder="Name">
+    <label>Email</label>
+    <input id="contact-email" class="input" type="email" placeholder="you@example.com">
+    <label>Message</label>
+    <textarea id="contact-message" class="input" rows="5" placeholder="How can we help?"></textarea>
+    <div style="margin-top:10px;display:flex;gap:8px">
+      <button class="btn" id="contact-send">Send</button>
+      <button class="ghost" id="contact-cancel">Cancel</button>
+    </div>
+    <div id="contact-status" class="meta" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<!-- Modal backdrop -->
+<div id="modal-bp" class="modal-backdrop">
+  <div id="modal-content" class="modal"></div>
+</div>
+<!-- Owner Panel Modal -->
+<div id="owner-bp" class="modal-backdrop">
+  <div class="modal">
+    <button class="icon-btn" id="owner-modal-close" aria-label="Close owner panel">✕</button>
+    <h2>Owner Panel (Demo)</h2>
+    <p class="meta">
+      Manage members and holidays for FitZone partner gyms.
+    </p>
+    <div id="owner-members-block" style="margin-top:10px;"></div>
+    <div id="owner-holidays-block" style="margin-top:18px;"></div>
+  </div>
+</div>
+
+
+<script src="functions.js"></script>
+</body>
+</html>
